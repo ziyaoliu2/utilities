@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo "Make everything"
+for d in */ ; do
+  if [ -d ${d}/Make ]; then
+    wmake $d
+  elif [ -f ${d}/Allwmake ]; then
+    pushd $d
+    ./Allwmake
+    popd
+  fi
+done
+

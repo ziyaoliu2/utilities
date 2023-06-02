@@ -1,0 +1,33 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.4.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     4.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      surfRoughGenDict;
+}
+
+// Methods: symmetric, synchronous, asymmetric, oneSurface, oneSurfaceDecay;
+apply               oneSurface;
+patchName           solubleWall;
+
+majDir              0;
+minDir              1;
+majLen              380;
+minLen              330;
+majNum              190;
+minNum              165;
+
+seed                513287;
+roughness           0.05;
+dHurst              0;
+cutLen              2;
+maxDisp             0.1;
+

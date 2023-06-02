@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo "Clean everything"
+for d in */ ; do
+  if [ -d ${d}/Make ]; then
+    wclean $d
+  elif [ -f ${d}/Allwmake ]; then
+    pushd $d
+    ./Allwclean
+    popd
+  fi
+done
+
